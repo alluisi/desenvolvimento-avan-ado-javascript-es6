@@ -1,4 +1,4 @@
-var obj = {
+const obj = {
     showContext: function showContext() {
         // console.log(this); // { showContext: [Function: showContext], log: [Function: log] }
         // this.log('teste'); // teste

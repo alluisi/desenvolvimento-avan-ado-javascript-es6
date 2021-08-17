@@ -1,10 +1,10 @@
-var log = function (value) {
+const log = function (value) {
     console.log(value);
 }
 
 log('test');
 
-var sum = function (a, b) {
+const sum = function (a, b) {
     return a + b;
 }
 
