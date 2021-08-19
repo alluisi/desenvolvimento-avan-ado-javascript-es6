@@ -12,7 +12,19 @@ describe('Math class', function () {
         });
     });
 
-    it('Multiply tho numbers');
+    it.only('Multiply tho numbers', function () { // only para executar apenas esse teste
+        const math = new Math();
+
+        assert.equal(math.multiply(5, 5), 25);
+    });
+
+    /*
+    it.skip('Multiply tho numbers', function () { // skip para não executar esse teste
+        const math = new Math();
+
+        assert.equal(math.multiply(5, 5), 25);
+    });
+    */
 });
 
 // npm run test
