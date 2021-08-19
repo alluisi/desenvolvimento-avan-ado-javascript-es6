@@ -1,6 +1,8 @@
 class Math {
-    sum(a, b) {
-        return a + b;
+    sum(a, b, callback) {
+        setTimeout(() => {
+            callback(a + b);
+        }, 1500); // limite de 2000 para o Mocha
     }
 }
 
