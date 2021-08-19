@@ -1,0 +1,15 @@
+{
+  "name": "1-mocha",
+  "version": "1.0.0",
+  "description": "",
+  "main": "1-mocha.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^9.0.3"
+  }
+}
