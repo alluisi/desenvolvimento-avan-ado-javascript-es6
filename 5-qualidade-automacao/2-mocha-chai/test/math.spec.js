@@ -1,5 +1,6 @@
 const assert = require('assert');
 const Math = require('../src/math');
+const expect = require('chai').expect;
 
 let valueHook = 0;
 
@@ -16,7 +17,8 @@ describe('Math class', function () {
         valueHook = 5;
 
         math.sum(valueHook, 5, (value) => {
-            assert.equal(value, 10);
+            expect(value).to.equal(10);
+            // assert.equal(value, 10);
             done();
         });
     });
@@ -38,7 +40,31 @@ describe('Math class', function () {
     it('Multiply tho numbers', function () {
         const math = new Math();
 
-        assert.equal(math.multiply(valueHook, 5), 0);
+        // assert.equal(math.multiply(valueHook, 5), 0);
+        expect(math.multiply(valueHook, 5)).to.equal(0);
+    });
+
+    it('Object have property', function () {
+        const obj = {
+            name: 'Alessandra'
+        }
+
+        expect(obj).to.have.property('name').equal('Alessandra');
+    });
+
+    it('Compare object', function () {
+        const obj1 = {
+            name: 'Alessandra'
+        }
+
+        // const obj2 = obj1;
+        // expect(obj1).to.equal(obj2);
+
+        const obj2 = {
+            name: 'Alessandra'
+        }
+
+        expect(obj1).to.deep.equal(obj2);
     });
 });
 
