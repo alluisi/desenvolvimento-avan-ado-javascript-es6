@@ -1,6 +1,7 @@
 const assert = require('assert');
 const Math = require('../src/math');
 const expect = require('chai').expect;
+const sinon = require('sinon');
 
 let valueHook = 0;
 
@@ -66,6 +67,32 @@ describe('Math class', function () {
 
         expect(obj1).to.deep.equal(obj2);
     });
+
+    it.only('Calls req with sum and index values', function () {
+        const req = {};
+        /*
+        const res = {
+            load: sinon.spy()
+        };
+        */
+        const res = {
+            load: function load() {
+                console.log('Called!');
+            }
+        };
+        // sinon.spy(res, 'load');
+        // sinon.stub(res, 'load');
+        sinon.stub(res, 'load').returns('xpto');
+
+        const math = new Math();
+
+        math.printSum(req, res, 5, 5);
+        // res.restore();
+
+        // expect(res.load.calledOnce).to.be.true;
+        expect(res.load.args[0][0]).to.equal('index');
+        // expect(res.load.args[0][1]).to.equal(10);
+    })
 });
 
 // npm run test
